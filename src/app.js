@@ -5,6 +5,7 @@ const app=express()
 const geocode=require('./utills/geocode')
 const forecast=require('./utills/forecast')
 const { response } = require('express')
+const port=process.env.PORT|| 3000
 app.set('view engine', 'hbs')
 app.set('views',path.join(__dirname,'../template/views'))
 hbs.registerPartials(path.join(__dirname,'../template/partials'))
@@ -85,6 +86,6 @@ app.get('*',(req,res)=>{
         error:'Page Note Found'
     })
 })
-app.listen(3000,()=>{
-    console.log('serever on port 3000')
+app.listen(port,()=>{
+    console.log('serever on port '+port) 
 })
