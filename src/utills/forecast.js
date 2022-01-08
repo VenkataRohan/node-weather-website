@@ -10,7 +10,9 @@ const forecast=(a,b,callback)=>{
         }else{ 
             callback(undefined,{
                 temperature:response.body.current.temperature,
-                feelslike_temperature:response.body.current.feelslike
+                feelslike_temperature:response.body.current.feelslike,
+                 humidity: response.body.current.humidity,
+                wind_speed:response.body.current.wind_speed,
             })
           }
     })
